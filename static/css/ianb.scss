@@ -1,0 +1,136 @@
+//MAIN COLOURS
+$clouds: 	#ecf0f1; //clouds
+$primary:	#2c3e50; //midnight blue
+$secondary: #bdc3c7; //silver
+$info: 		#d35400; //pumpkin
+$success: 	#27ae60;
+
+//STEAM
+$online: #3498db; //peter river
+$ingame: #2ecc71; //emerald
+$offline: $clouds;
+
+body {
+	background-color: $clouds;
+	color: $primary;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	
+	&:hover {
+		color: $info;
+	}
+	&:focus {
+		color: $info;
+	}
+}
+
+.menu {
+	a {
+		@media screen and (min-width: 400px) {
+			font-size: 18px;
+		}
+		@media screen and (min-width: 768px) {
+			font-size: 24px;
+			letter-spacing: 2px;
+		}
+		@media screen and (min-width: 1080px) {
+			font-size: 32px;
+			letter-spacing: 4px;
+		}
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;
+		}
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+}
+
+#games-menu {
+	margin-top: 50px;
+}
+
+.album-tile {
+	overflow: hidden;
+	width: 300px;
+	height: 300px;
+	display: inline-flex;
+	margin: 10px;
+	p {
+		font-size: 18px;
+		vertical-align: text-bottom;
+	}
+	img {
+		position: absolute;
+		height: 300px;
+		width: 300px;
+	}
+	&:hover {
+		p {
+			z-index: 2;
+			color: $info;
+		}
+		img {
+			opacity: 0.3;
+		}
+	}
+}
+
+#footer {
+	margin-top: 125px;
+	margin-bottom: 150px;
+}
+
+#steam_avatar {
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	img {
+		margin-top: 10px;
+		border: 3px solid $clouds;
+		.online #steam_avatar {
+			border: 3px solid $online;
+		}
+		.ingame #steam_avatar {
+			border: 3px solid $ingame;
+		}
+	}
+	&:hover .tooltip {
+		display: block;
+	}
+}
+
+.tooltip {
+	display: none;
+	margin-left: -45px;
+	position: absolute;
+	line-height: 20px;
+	padding: 10px;
+	font-size: 14px;
+	text-align: center;
+	color: white;
+	background: $primary;
+	border: 4px solid $primary;
+	border-radius: 5px;
+	-webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+.stat-panel {
+	border: 2px solid $clouds;
+	height: 50px;
+	margin-bottom: 15px;
+	padding: 15px;
+	font-size: 18px;
+	&:hover, &:focus, &:active {
+		border: 2px solid $primary;
+		-webkit-transform: scale(1.1);
+  		transform: scale(1.1);
+	}
+}
